@@ -1,7 +1,24 @@
 # Background
-This section describes the JayCoin application’s architecture. JayCoin is a simple
-implementation of a Blockchain. It's capable of mining a block, validating the block,
-and returning the list of blocks (blockchain).
+This project was inspired by the experience gained during Qala Developer Program (2021), which has by itself 
+done magnitudes in exposing me to approaches to Bitcoin and Lightning software design. 
+
+This section describes the JayCoin application’s architecture. JayCoin is a simple implementation of a Blockchain. 
+It's capable of mining a block, validating the blockchain, and returning the list of blocks (blockchain).
+
+## Features
+### Get Blockchain
+This feature gets the state of the blockchain at any given time by returning the list of mined blocks. If no block 
+is mined yet, it returns the Genesis Block which is a default block created by the system. Blocks are added to the 
+blockchain after a successful mine
+
+### Mining Block
+Also known as proof of work, it performs hash (SHA-256) operation on parameters on a block, then compares the
+result against the set target. If the comparison returns `true` then we have the proof of work (nonce), the block 
+is added to the chain and a successful message is returned.
+
+### Validate BlockChain
+This is used to check if the blockchain has been altered or attacked. It checks the hash of blocks and height
+of the blockchain to validate if the blockchain is valid or not.
 
 `Note: ` this is a simple application to help understand the concept of block creation,
 mining (proof of work), block hashing, and block validating.
