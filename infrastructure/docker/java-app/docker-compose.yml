@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  jaycoin-application:
+    image: openjdk:11
+    container_name: jaycoin-application
+    restart: on-failure
+    ports:
+      - 9090:9090
+    volumes:
+      - "../../../target:/usr/src/jaycoin"
+    command: ['java', '-jar', '/usr/src/jaycoin/jaycoin-0.0.1-RELEASE.jar']

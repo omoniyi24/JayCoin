@@ -51,7 +51,6 @@ public class BlockServiceImplTests {
     void returnBlockWhenGetPreviousIsCalled() throws Exception {
         Block returnedBlock = blockService.getPreviousBlock();
         assertNotNull(returnedBlock);
-        System.out.println(">>>> " + returnedBlock);
         assertTrue(returnedBlock.getIndex() == 1);
     }
 

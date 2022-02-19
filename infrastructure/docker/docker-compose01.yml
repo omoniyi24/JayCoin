@@ -1,0 +1,9 @@
+#Ensure external networks are created
+version: '3.9'
+services:
+  jaycoin-application:
+    extends:
+      file: ./java-app/docker-compose.yml
+      service: jaycoin-application
+
+
